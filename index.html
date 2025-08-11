@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group-E To-Do App</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body class="m-0 p-0 box-border flex justify-center items-center min-h-screen bg-blue-950 font-jost">
+  <div id="container" class="flex justify-center items-center w-full h-full px-[20px]">
+    <div id="todo-app" class="w-full max-w-[400px] p-8 flex flex-col items-center justify-center gap-8 text-white shadow-2xs border border-solid border-transparent">
+
+      <h1 class="font-bold text-2xl">To-Do List</h1>
+
+      <div class="stat-container px-4 py-5 border border-solid border-blue-100 rounded-lg flex items-center justify-between gap-5 w-[100%]">
+        <div class="details w-[100%]">
+          <h3 class="text-white">Keep it Up!</h3>
+          <div id="progressbar" class="w-[100%] h-2 bg-blue-200 rounded-full relative mt-3.5">
+            <div id="progress" class="w-[50%] h-[100%] bg-blue-500 rounded-full transition-width-[0.3s]ease-in-out"></div>
+          </div>
+        </div>
+
+        <div class="stats-number">
+          <p id="numbers" class="flex items-center justify-center w-[80px] h-[80px] bg-blue-300 border border-solid border-blue-100 rounded-lg font-bold text-2xl">0 / 0</p>
+        </div>
+      </div>
+
+      
+      
+      <form id="input-area" class="flex justify-between items-center w-full">
+
+        <input type="text" id="task-input" placeholder="Add a new task..." class="flex-1 py-2 px-4 font-semibold border border-none rounded-lg bg-blue-100 text-blue-900">
+
+        <button type="submit" id="add-task-btn" class="flex items-center justify-center mx-2 p-2 border rounded-[50%] border-solid border-transparent cursor-pointer bg-blue-500 text-white transition-all duration-200 ease-in-out hover:transform hover:scale-[1.1] hover:bg-blue-300"><i class="fa-solid fa-plus"></i></button>
+      </form>
+
+      <div class="todos-container flex justify-center items-center">
+        <ul id="task-list">
+          <!-- Task items will be dynamically added here -->
+        </ul>
+        <img src="emptytab.png" alt="emptytab" class="empty-image">
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
