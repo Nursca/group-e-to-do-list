@@ -76,15 +76,25 @@ document.addEventListener("DOMContentLoaded", () => {
       editBtn.style.opacity = "0.5";
       editBtn.style.pointerEvents = "none";
     }
-    
+  
     checkbox.addEventListener("change", () => {
-      const isChecked = checkbox.checked;
-      li.classList.toggle("completed", isChecked);
-      editBtn.disabled = isChecked;
-      editBtn.style.opacity = isChecked ? "0.5" : "1";
-      editBtn.style.pointerEvents = isChecked ? "none" : "auto";
-      updateProgress();
-    });
+  const isChecked = checkbox.checked;
+
+  if (isChecked) {
+    li.classList.add("bg-gray-500", "opacity-60");
+    li.querySelector("span").classList.add("line-through");
+  } else {
+    li.classList.remove("bg-gray-500", "opacity-60");
+    li.querySelector("span").classList.remove("line-through");
+  }
+
+  li.classList.toggle("completed", isChecked);
+  editBtn.disabled = isChecked;
+  editBtn.style.opacity = isChecked ? "0.5" : "1";
+  editBtn.style.pointerEvents = isChecked ? "none" : "auto";
+  updateProgress();
+});
+
 
 
     editBtn.addEventListener("click", () => {
